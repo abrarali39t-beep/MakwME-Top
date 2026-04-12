@@ -618,11 +618,6 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
     </button>
   </header>
   <div class="scroll-body">
-    <div id="home-verify-banner" class="verify-banner hidden" role="alert">
-      <span class="v-icon">⚠️</span>
-      <div class="v-text"><strong>Verify your email</strong> to add businesses and post reviews</div>
-      <button class="btn-verify" onclick="sendVerification()">Verify</button>
-    </div>
     <div class="home-hero">
       <!-- SEO: Primary H1 – MBP brand + J&K geo -->
       <h1>Create Your <span>MBP</span> 🔥<br/>Get on Google Free</h1>
@@ -960,12 +955,6 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
           <div style="font-weight:700;font-size:.95rem" id="settings-name">User</div>
           <div class="text-muted text-sm" id="settings-email" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></div>
         </div>
-      </div>
-    </div>
-    <div style="margin:0 16px 4px;padding:14px;border-radius:var(--radius-sm);border:1.5px solid var(--gray200);background:var(--bg)" id="verification-block">
-      <div style="display:flex;align-items:center;justify-content:space-between">
-        <div><div style="font-weight:600;font-size:.9rem">Email Verification</div><div id="verify-status-text" class="text-sm text-muted" style="margin-top:3px">Checking...</div></div>
-        <div id="verify-action-area"></div>
       </div>
     </div>
     <div style="margin:12px 0 4px;padding:0 16px"><span style="font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gray400)">Account</span></div>
@@ -1314,18 +1303,16 @@ window.DRIVE_UPLOAD_URL = DRIVE_UPLOAD_URL;
 
 onAuthStateChanged(auth, async user => {
   window._currentUser = user;
-  // Use window-safe calls — second script may not have run yet
+  // ALWAYS show the main app — guests can browse freely
+  // Login is only asked when user tries to add MBP or write a review
   if (window.hidePageLoader) window.hidePageLoader();
+  if (window.showMainApp) window.showMainApp();
+  if (window.loadHomeBiz) window.loadHomeBiz();
   if (user) {
-    if (window.showMainApp) window.showMainApp();
     if (window.updateSettingsUI) window.updateSettingsUI(user);
-    if (window.loadHomeBiz) window.loadHomeBiz();
     if (window.loadDashboard) window.loadDashboard();
     if (window.checkAdminAccess) window.checkAdminAccess(user);
-    if (window.showVerifyBanner) window.showVerifyBanner(!user.emailVerified);
     await handleFirstLogin(user);
-  } else {
-    if (window.showAuth) window.showAuth('login');
   }
 });
 
@@ -1384,14 +1371,12 @@ window.hidePageLoader = hidePageLoader;
 window.sendWelcomeEmail = sendWelcomeEmail;
 window.handleFirstLogin = handleFirstLogin;
 
-// ── Failsafe: remove loader after 6s if Firebase auth never fires ──
+// ── Failsafe: if Firebase is slow, show main app after 5s ──
 setTimeout(() => {
   if (window.hidePageLoader) window.hidePageLoader();
-  // If still no auth state, show login
-  if (window._currentUser === undefined) {
-    if (window.showAuth) window.showAuth('login');
-  }
-}, 6000);
+  if (window.showMainApp) window.showMainApp();
+  if (window.loadHomeBiz) window.loadHomeBiz();
+}, 5000);
 </script>
 
 <script>
@@ -1501,24 +1486,18 @@ function logout() { window._authFns.signOut(window._auth); }
 // ══════════════════════════════════════
 //  VERIFICATION
 // ══════════════════════════════════════
-function showVerifyBanner(show) { document.getElementById('home-verify-banner').classList.toggle('hidden', !show); }
-async function sendVerification() {
-  if (!window._currentUser) return;
-  try { await window._authFns.sendEmailVerification(window._currentUser); showToast('📧 Verification link sent!'); }
-  catch(e) { showToast('❌ ' + friendlyError(e.code)); }
-}
+// ── Email verification system removed — not required ──
+function showVerifyBanner() {} // kept as no-op for safety
+async function sendVerification() { showToast('📧 Email verification not required'); }
 function updateSettingsUI(user) {
   if (!user) return;
   const name = user.displayName || user.email?.split('@')[0] || 'User';
-  document.getElementById('settings-name').textContent = name;
-  document.getElementById('settings-email').textContent = user.email || '';
-  document.getElementById('settings-avatar').textContent = name.charAt(0).toUpperCase();
-  const vText = document.getElementById('verify-status-text'), vAction = document.getElementById('verify-action-area');
-  if (user.emailVerified) { vText.innerHTML = '<span style="color:var(--green);font-weight:600">✅ Verified</span>'; vAction.innerHTML = ''; }
-  else { vText.innerHTML = '<span style="color:var(--red)">❌ Not verified</span>'; vAction.innerHTML = '<button class="btn btn-primary btn-sm" style="width:auto" onclick="sendVerification()">Verify</button>'; }
+  const el = document.getElementById('settings-name'); if(el) el.textContent = name;
+  const em = document.getElementById('settings-email'); if(em) em.textContent = user.email || '';
+  const av = document.getElementById('settings-avatar'); if(av) av.textContent = name.charAt(0).toUpperCase();
 }
-function isVerified() { return window._currentUser && window._currentUser.emailVerified; }
-function requireVerified(action) { if (!isVerified()) { showToast('👉 Please verify your email to ' + action); return false; } return true; }
+function isVerified() { return true; } // Always true — no email verification needed
+function requireVerified() { return true; } // Always pass
 
 async function changePassword() {
   const np = document.getElementById('cp-new').value, cp = document.getElementById('cp-confirm').value;
@@ -1575,7 +1554,6 @@ function compressImage(file, maxWidth, quality) {
 // ══════════════════════════════════════
 function tryAddBusiness() {
   if (!window._currentUser) { showAuth('login'); return; }
-  if (!requireVerified('add a business')) return;
   loadDraftToForm(); navTo('add');
 }
 function previewImg(input, boxId, previewId) {
@@ -2321,23 +2299,20 @@ if ('IntersectionObserver' in window) {
   const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting&&e.target.dataset.src){e.target.src=e.target.dataset.src;obs.unobserve(e.target);} }); });
   document.querySelectorAll('img[data-src]').forEach(img=>obs.observe(img));
 }
-if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{})); }
+if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{})); }
 
 // ══════════════════════════════════════
 //  EXPOSE GLOBALS
 // ══════════════════════════════════════
 Object.assign(window,{navTo,navBack,tryAddBusiness,loadHomeBiz,loadDashboard,filterCat,openBizDetail,callBusiness,whatsappBusiness,openWebsite,shareBusiness,openReviewModal,editReview,deleteReview,selectStar,submitReview,previewImg,previewGal,toggleService,saveDraft,autosaveDraft,submitBusiness,openEditBizModal,saveEditBusiness,deleteMyBusiness,openBizDetailAndEdit,toggleFaq,sendContactMsg,sendVerification,openModal,closeModal,openLightbox,logout,changePassword,sendPasswordReset,showToast,loadAdmin,loadAdminTab,adminAction,adminDelete,sendChatMsg,sendAdminReply,openAdminChatThread,showWelcomeModal,triggerInstall,updateInstallButtonVisibility,showInstallInstructions,showMainApp,showAuth,updateSettingsUI,checkAdminAccess,showVerifyBanner,loadDashboard,loadHomeBiz});
 
-// ── Safety net: if Firebase auth already resolved before this script ran ──
-// (can happen when page is cached by service worker)
+// ── Safety net: if Firebase auth resolved before this script ran ──
 if (window._currentUser !== undefined) {
   const u = window._currentUser;
-  hidePageLoader();
-  if (u) {
-    showMainApp(); updateSettingsUI(u); loadHomeBiz(); loadDashboard(); checkAdminAccess(u); showVerifyBanner(!u.emailVerified);
-  } else {
-    showAuth('login');
-  }
+  if (window.hidePageLoader) hidePageLoader();
+  showMainApp();
+  loadHomeBiz();
+  if (u) { updateSettingsUI(u); loadDashboard(); checkAdminAccess(u); }
 }
 </script>
 </body>
