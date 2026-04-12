@@ -2321,7 +2321,7 @@ if ('IntersectionObserver' in window) {
   const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting&&e.target.dataset.src){e.target.src=e.target.dataset.src;obs.unobserve(e.target);} }); });
   document.querySelectorAll('img[data-src]').forEach(img=>obs.observe(img));
 }
-if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{})); }
+if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{})); }
 
 // ══════════════════════════════════════
 //  EXPOSE GLOBALS
