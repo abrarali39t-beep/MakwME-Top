@@ -469,11 +469,6 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--primary);min-
 /* ─── OFFLINE ─── */
 #offline-banner{position:fixed;top:0;left:0;right:0;z-index:9998;background:#DC2626;color:#fff;text-align:center;padding:8px 16px;font-size:.8rem;font-weight:600;display:none}
 
-/* ─── WHATSAPP FLOAT ─── */
-#wa-float{position:fixed;bottom:calc(var(--nav-h)+20px+env(safe-area-inset-bottom));right:16px;z-index:499;width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);cursor:pointer;transition:var(--transition);text-decoration:none}
-#wa-float:hover{transform:scale(1.1)}
-#wa-float svg{width:26px;height:26px;fill:#fff}
-
 /* ─── LOADING OVERLAY ─── */
 #page-loader{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .4s ease}
 #page-loader.hide{opacity:0;pointer-events:none}
@@ -519,11 +514,6 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
 
 <div id="offline-banner">📵 You're offline – some features may be unavailable</div>
 <div id="toast"></div>
-
-<!-- ─── WHATSAPP FLOAT BUTTON ─── -->
-<a id="wa-float" href="https://wa.me/919400000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
 
 <!-- ─── INSTALL PROMPT ─── -->
 <div id="install-prompt">
@@ -986,25 +976,21 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
     </div>
     <div style="margin:12px 0 4px;padding:0 16px"><span style="font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gray400)">Information</span></div>
     <div style="background:var(--bg);border-radius:var(--radius);margin:0 16px;border:1px solid var(--gray100);overflow:hidden">
-      <div class="settings-item" onclick="navTo('about')"><div class="settings-icon">🔥</div><div style="flex:1"><div class="settings-label">About MBP</div><div class="text-muted text-sm">MakeMeTop Business Profile</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+      <a href="/about.html" style="text-decoration:none;color:inherit"><div class="settings-item"><div class="settings-icon">🔥</div><div style="flex:1"><div class="settings-label">About MBP</div><div class="text-muted text-sm">MakeMeTop Business Profile</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div></a>
       <div class="settings-item" onclick="navTo('help')"><div class="settings-icon">💬</div><div style="flex:1"><div class="settings-label">Help &amp; Live Chat</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
-      <div class="settings-item" onclick="navTo('privacy')"><div class="settings-icon">🔒</div><div style="flex:1"><div class="settings-label">Privacy Policy</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
-      <div class="settings-item" onclick="navTo('terms')"><div class="settings-icon">📄</div><div style="flex:1"><div class="settings-label">Terms &amp; Conditions</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
-      <div class="settings-item" onclick="navTo('refund')"><div class="settings-icon">💸</div><div style="flex:1"><div class="settings-label">Refund Policy</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+      <a href="/privacy-policy.html" style="text-decoration:none;color:inherit"><div class="settings-item"><div class="settings-icon">🔒</div><div style="flex:1"><div class="settings-label">Privacy Policy</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div></a>
+      <a href="/terms.html" style="text-decoration:none;color:inherit"><div class="settings-item"><div class="settings-icon">📄</div><div style="flex:1"><div class="settings-label">Terms &amp; Conditions</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div></a>
+      <a href="/refund.html" style="text-decoration:none;color:inherit"><div class="settings-item"><div class="settings-icon">💸</div><div style="flex:1"><div class="settings-label">Refund Policy</div></div><svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div></a>
     </div>
     <div style="margin:12px 0 4px;padding:0 16px"><span style="font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gray400)">App</span></div>
     <div style="background:var(--bg);border-radius:var(--radius);margin:0 16px;border:1px solid var(--gray100);overflow:hidden">
-      <div class="settings-item" id="install-settings-btn" onclick="triggerInstall()" style="display:none">
-        <div class="settings-icon">📲</div>
+      <div class="settings-item" id="install-settings-btn" onclick="triggerInstall()">
+        <div class="settings-icon" style="background:var(--primary)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
         <div style="flex:1">
-          <div class="settings-label">Install MakeMeTop App</div>
-          <div class="text-muted text-sm">Add to home screen for the best experience</div>
+          <div class="settings-label">Download MBP App</div>
+          <div class="text-muted text-sm" id="install-btn-sub">Add to home screen – free</div>
         </div>
         <svg class="settings-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      </div>
-      <div class="settings-item" id="installed-badge" style="display:none">
-        <div class="settings-icon">✅</div>
-        <div style="flex:1"><div class="settings-label">App Installed</div><div class="text-muted text-sm">MakeMeTop is installed on your device</div></div>
       </div>
     </div>
     <div style="margin:16px 16px 0"><button class="btn btn-red" onclick="logout()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign Out</button></div>
@@ -1442,7 +1428,7 @@ function navTo(page) {
   document.querySelectorAll('.nav-item[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === page));
   if (page !== currentPage) pageHistory.push(currentPage);
   currentPage = page;
-  if (page === 'settings') { updateSettingsUI(window._currentUser); updateInstallButtonVisibility(); }
+  if (page === 'settings') { updateSettingsUI(window._currentUser||null); updateInstallButtonVisibility(); }
   if (page === 'dashboard') loadDashboard();
   if (page === 'admin') loadAdmin();
   if (page === 'home') loadHomeBiz();
@@ -2248,37 +2234,49 @@ function friendlyError(code) {
 // ══════════════════════════════════════
 //  PWA
 // ══════════════════════════════════════
+// ══════════════════════════════════════
+//  PWA INSTALL
+// ══════════════════════════════════════
 function updateInstallButtonVisibility() {
   const btn = document.getElementById('install-settings-btn');
-  const badge = document.getElementById('installed-badge');
-  const appSection = document.querySelector('#install-settings-btn')?.closest('div[style*="overflow:hidden"]')?.parentElement;
-  if (!btn || !badge) return;
-  const isInstalled = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  const sub = document.getElementById('install-btn-sub');
+  if (!btn) return;
+  const isInstalled = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
   if (isInstalled) {
-    btn.style.display = 'none';
-    badge.style.display = 'flex';
-    if (appSection) appSection.style.display = 'block';
+    if (sub) sub.textContent = '✅ App already installed on this device';
+    btn.style.opacity = '0.6';
+    btn.onclick = () => showToast('✅ MBP app is already installed!');
   } else if (deferredInstallPrompt) {
-    btn.style.display = 'flex';
-    badge.style.display = 'none';
-    if (appSection) appSection.style.display = 'block';
+    if (sub) sub.textContent = 'Tap to install – works offline too';
+    btn.style.opacity = '1';
+    btn.onclick = triggerInstall;
   } else {
-    btn.style.display = 'none';
-    badge.style.display = 'none';
+    // No prompt yet (iOS Safari or already installed) — show instructions
+    if (sub) sub.textContent = 'Tap Share → "Add to Home Screen"';
+    btn.style.opacity = '1';
+    btn.onclick = showInstallInstructions;
   }
 }
 
 async function triggerInstall() {
-  if (!deferredInstallPrompt) { showToast('📲 Use your browser menu to install'); return; }
+  if (!deferredInstallPrompt) { showInstallInstructions(); return; }
   deferredInstallPrompt.prompt();
   const r = await deferredInstallPrompt.userChoice;
   if (r.outcome === 'accepted') {
-    showToast('🎉 MakeMeTop installed!');
-    document.getElementById('install-settings-btn').style.display = 'none';
-    document.getElementById('installed-badge').style.display = 'flex';
+    showToast('🎉 MBP app installed!');
+    updateInstallButtonVisibility();
   }
   document.getElementById('install-prompt').classList.remove('show');
   deferredInstallPrompt = null;
+}
+
+function showInstallInstructions() {
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  if (isIOS) {
+    showToast('📲 Tap Share ↑ then "Add to Home Screen"');
+  } else {
+    showToast('📲 Tap ⋮ menu → "Install app" or "Add to Home Screen"');
+  }
 }
 
 window.addEventListener('beforeinstallprompt', e => {
@@ -2287,16 +2285,22 @@ window.addEventListener('beforeinstallprompt', e => {
   document.getElementById('install-prompt').classList.add('show');
   updateInstallButtonVisibility();
 });
+
 document.getElementById('install-btn').onclick = () => triggerInstall();
 document.getElementById('install-dismiss').onclick = () => document.getElementById('install-prompt').classList.remove('show');
+
 window.addEventListener('appinstalled', () => {
   document.getElementById('install-prompt').classList.remove('show');
   deferredInstallPrompt = null;
   updateInstallButtonVisibility();
-  showToast('✅ MakeMeTop app installed!');
+  showToast('✅ MBP app installed successfully!');
 });
-window.addEventListener('online',()=>document.getElementById('offline-banner').style.display='none');
-window.addEventListener('offline',()=>document.getElementById('offline-banner').style.display='block');
+
+window.addEventListener('online',  () => document.getElementById('offline-banner').style.display = 'none');
+window.addEventListener('offline', () => document.getElementById('offline-banner').style.display = 'block');
+
+// Run once on load to set correct state
+window.addEventListener('load', updateInstallButtonVisibility);
 
 // ══════════════════════════════════════
 //  DEEP LINK
@@ -2322,7 +2326,7 @@ if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator
 // ══════════════════════════════════════
 //  EXPOSE GLOBALS
 // ══════════════════════════════════════
-Object.assign(window,{navTo,navBack,tryAddBusiness,loadHomeBiz,loadDashboard,filterCat,openBizDetail,callBusiness,whatsappBusiness,openWebsite,shareBusiness,openReviewModal,editReview,deleteReview,selectStar,submitReview,previewImg,previewGal,toggleService,saveDraft,autosaveDraft,submitBusiness,openEditBizModal,saveEditBusiness,deleteMyBusiness,openBizDetailAndEdit,toggleFaq,sendContactMsg,sendVerification,openModal,closeModal,openLightbox,logout,changePassword,sendPasswordReset,showToast,loadAdmin,loadAdminTab,adminAction,adminDelete,sendChatMsg,sendAdminReply,openAdminChatThread,showWelcomeModal,triggerInstall,updateInstallButtonVisibility,showMainApp,showAuth,updateSettingsUI,checkAdminAccess,showVerifyBanner,loadDashboard,loadHomeBiz});
+Object.assign(window,{navTo,navBack,tryAddBusiness,loadHomeBiz,loadDashboard,filterCat,openBizDetail,callBusiness,whatsappBusiness,openWebsite,shareBusiness,openReviewModal,editReview,deleteReview,selectStar,submitReview,previewImg,previewGal,toggleService,saveDraft,autosaveDraft,submitBusiness,openEditBizModal,saveEditBusiness,deleteMyBusiness,openBizDetailAndEdit,toggleFaq,sendContactMsg,sendVerification,openModal,closeModal,openLightbox,logout,changePassword,sendPasswordReset,showToast,loadAdmin,loadAdminTab,adminAction,adminDelete,sendChatMsg,sendAdminReply,openAdminChatThread,showWelcomeModal,triggerInstall,updateInstallButtonVisibility,showInstallInstructions,showMainApp,showAuth,updateSettingsUI,checkAdminAccess,showVerifyBanner,loadDashboard,loadHomeBiz});
 
 // ── Safety net: if Firebase auth already resolved before this script ran ──
 // (can happen when page is cached by service worker)
