@@ -43,7 +43,7 @@
 <meta name="ICBM" content="34.0837, 74.7973"/>
 
 <!-- ═══ PWA ═══ -->
-<link rel="manifest" href="manifest.json"/>
+<link rel="manifest" href="./manifest.json"/>
 <link rel="apple-touch-icon" href="icon-192.png"/>
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"/>
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"/>
@@ -1285,6 +1285,8 @@ const firebaseConfig = {
 };
 
 const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwwlGThDueQFSjP1Sc-UFFBB9ojmV7wokWZx3uPuzSbpgDBSbxzfjk3L7W0KIXSzYFS/exec";
+// ⬇ Deploy Code.gs from script.google.com and paste YOUR NEW URL here:
+const EMAIL_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwwlGThDueQFSjP1Sc-UFFBB9ojmV7wokWZx3uPuzSbpgDBSbxzfjk3L7W0KIXSzYFS/exec";
 const ADMIN_EMAILS = ["abrarrtallks@gmail.com","contact.abrarrtallks@gmail.com"];
 
 const app = initializeApp(firebaseConfig);
@@ -1300,6 +1302,7 @@ window._collections = { addDoc, getDocs, doc, updateDoc, deleteDoc, query, where
 window._authFns = { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, sendEmailVerification, sendPasswordResetEmail, updatePassword, EmailAuthProvider, reauthenticateWithCredential };
 window.ADMIN_EMAILS = ADMIN_EMAILS;
 window.DRIVE_UPLOAD_URL = DRIVE_UPLOAD_URL;
+window.EMAIL_SCRIPT_URL = EMAIL_SCRIPT_URL;
 
 onAuthStateChanged(auth, async user => {
   window._currentUser = user;
@@ -1349,18 +1352,16 @@ async function handleFirstLogin(user) {
 async function sendWelcomeEmail(email, name) {
   if (!email) return;
   try {
-    await fetch(window.DRIVE_UPLOAD_URL, {
+    await fetch(window.EMAIL_SCRIPT_URL, {
       method: 'POST',
       body: JSON.stringify({
         action: 'sendWelcomeEmail',
         to: email,
-        name: name,
-        subject: '🔥 Welcome to MBP – MakeMeTop Business Profile!',
-        body: `Hi ${name},\n\nWelcome to MBP – MakeMeTop Business Profile! 🎉\n\nYou're now part of Srinagar's #1 local business directory for Jammu & Kashmir.\n\nHere's what you can do:\n✅ Create your free MBP (MakeMeTop Business Profile)\n⭐ Write 5-star reviews for great businesses\n🔍 Discover top-rated businesses in Srinagar & J&K\n📲 Install our app on your home screen\n\nYour MBP gets ranked on Google Search with your business name, address, phone & reviews — completely free!\n\nGet started: https://makemetop.in\n\n– Team MBP (MakeMeTop)\nSrinagar, Jammu & Kashmir\nmakemetop.in`
+        name: name
       }),
       headers: {'Content-Type': 'text/plain'}
     });
-  } catch(e) { /* Silent fail — email is bonus feature */ }
+  } catch(e) { /* Silent fail */ }
 }
 
 function hidePageLoader() {
@@ -2299,7 +2300,14 @@ if ('IntersectionObserver' in window) {
   const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting&&e.target.dataset.src){e.target.src=e.target.dataset.src;obs.unobserve(e.target);} }); });
   document.querySelectorAll('img[data-src]').forEach(img=>obs.observe(img));
 }
-if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{})); }
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    // Use relative path — works on GitHub Pages /docs/ and custom domains alike
+    navigator.serviceWorker.register('./sw.js', { scope: './' })
+      .then(reg => console.log('[MBP] SW registered, scope:', reg.scope))
+      .catch(err => console.warn('[MBP] SW failed:', err));
+  });
+}
 
 // ══════════════════════════════════════
 //  EXPOSE GLOBALS

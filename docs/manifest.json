@@ -1,8 +1,9 @@
 {
-  "name": "MakeMeTop",
-  "short_name": "MakeMeTop",
-  "description": "Put your business on top – Local business listing and lead generation platform in Srinagar",
-  "start_url": "/",
+  "name": "MBP – MakeMeTop Business Profile",
+  "short_name": "MBP",
+  "description": "MBP – MakeMeTop Business Profile. Srinagar's #1 local business directory for Jammu & Kashmir. Create your free MBP and rank on Google.",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#FFFFFF",
@@ -10,21 +11,33 @@
   "categories": ["business", "local", "lifestyle"],
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "screenshots": [
     {
-      "src": "screenshot-mobile.png",
+      "src": "./screenshot-mobile.png",
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow"
@@ -32,18 +45,18 @@
   ],
   "shortcuts": [
     {
-      "name": "Add Business",
-      "short_name": "Add",
-      "description": "Add your business listing",
-      "url": "/?action=add",
-      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+      "name": "Create MBP",
+      "short_name": "Create",
+      "description": "Create your MakeMeTop Business Profile",
+      "url": "./?action=add",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Search Businesses",
+      "name": "Search MBPs",
       "short_name": "Search",
-      "description": "Find local businesses",
-      "url": "/?action=search",
-      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+      "description": "Find local businesses in Srinagar J&K",
+      "url": "./?action=search",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
