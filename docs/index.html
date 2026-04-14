@@ -61,7 +61,7 @@
   "name": "MBP – MakeMeTop Business Profile",
   "alternateName": ["MBP", "MakeMeTop", "MMT", "MMTBP", "MakeMeTop Business Profile", "Make Me Top", "MT Directory", "makemetop.in"],
   "url": "https://makemetop.in",
-  "description": "MBP – MakeMeTop Business Profile: Srinagar's #1 local business listing and lead generation platform in Jammu & Kashmir, India. Create your free MBP today.",
+  "description": "MBP – MakeMeTop Business Profile: Srinagar's #1 local business directory for Jammu & Kashmir, India. Create your free MBP and rank on Google today.",
   "inLanguage": "en-IN",
   "potentialAction": {
     "@type": "SearchAction",
@@ -301,7 +301,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--primary);min-
 .avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;background:var(--gray200);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0;overflow:hidden}
 
 /* ─── STARS ─── */
-.stars{display:flex;gap:2px}.star{font-size:.9rem;color:var(--gray200)}.star.filled{color:#FBBF24}
+.stars{display:flex;gap:2px;align-items:center}.star{font-size:.95rem;color:#E5E7EB;line-height:1}.star.filled{color:#FBBF24!important}
 
 /* ─── IMAGE UPLOAD ─── */
 .img-upload-box{border:2px dashed var(--gray200);border-radius:var(--radius-sm);padding:24px;text-align:center;cursor:pointer;transition:var(--transition);display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--gray50);position:relative;overflow:hidden}
@@ -751,8 +751,6 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
             <option>Legal Services</option>
             <option>Consulting</option>
             <option>Accounting & Tax</option>
-            <option>Human Resources</option>
-            <option>Recruitment & Staffing</option>
             <option>Business Services</option>
             <option>Security Services</option>
           </optgroup>
@@ -948,7 +946,7 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
   <div class="scroll-body"><div class="section">
     <div style="text-align:center;padding:8px 0 20px"><div style="font-size:2.5rem;margin-bottom:8px">🔥</div><h1 style="font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:6px">MBP Premium</h1><p class="text-muted text-sm">Rank your MakeMeTop Business Profile at the top<br/>across Srinagar &amp; J&amp;K</p></div>
     <div class="price-card"><h3>MBP Free</h3><div class="price">₹0 <span>/ forever</span></div><ul><li>Create your MBP on MakeMeTop</li><li>Business profile with photos &amp; gallery</li><li>Customer reviews &amp; ratings</li><li>Call, WhatsApp &amp; Website buttons</li><li>Google-indexed MBP with schema</li><li>QR code for easy sharing</li></ul><button class="btn btn-ghost" disabled>Current Plan</button></div>
-    <div class="price-card featured" style="margin-top:20px"><div class="popular-tag">🔥 Most Popular</div><h3>MBP Premium</h3><div class="price">₹499 <span>/ month</span></div><ul><li>Priority MBP – appear first on Google</li><li>Featured in "Top MBPs in Srinagar"</li><li>🏆 Premium badge on your MBP</li><li>10x more visibility &amp; leads</li><li>Analytics dashboard for your MBP</li><li>Priority approval within 2 hours</li></ul><button class="btn" style="background:#fff;color:var(--primary)" onclick="startPayment('premium_monthly',499,'MBP Premium – 1 Month')">🔥 Get MBP Premium – ₹499</button></div>
+    <div class="price-card featured" style="margin-top:20px"><div class="popular-tag">🔥 Most Popular</div><h3>MBP Premium</h3><div class="price">₹499 <span>/ month</span></div><ul><li>Priority MBP – appear first on Google</li><li>Featured in "Top MBPs in Srinagar"</li><li>🏆 Premium badge on your MBP</li><li>10x more profile visibility</li><li>Analytics dashboard for your MBP</li><li>Priority approval within 2 hours</li></ul><button class="btn" style="background:#fff;color:var(--primary)" onclick="startPayment('premium_monthly',499,'MBP Premium – 1 Month')">🔥 Get MBP Premium – ₹499</button></div>
     <div class="price-card" style="margin-top:14px"><h3>🎯 MBP Boost Ad</h3><div class="price">₹199 <span>/ week</span></div><ul><li>Homepage banner for your MBP</li><li>Top of search results in J&amp;K</li><li>5x more MBP profile views</li><li>Targeted local audience in Kashmir</li></ul><button class="btn btn-accent" onclick="startPayment('boost_weekly',199,'MBP Boost Ad – 1 Week')">🚀 Boost My MBP – ₹199</button></div>
   </div></div>
 </div>
@@ -1070,7 +1068,7 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
       <p class="text-muted">Srinagar's #1 Local Business Directory</p>
     </div>
     <h2 style="font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:8px">About Us</h2>
-    <p><strong>MakeMeTop</strong> is Srinagar's leading local business listing and lead generation platform for Jammu &amp; Kashmir. We help every business — big or small — get discovered online and generate real customers.</p>
+    <p><strong>MakeMeTop</strong> is Srinagar's #1 local business directory for Jammu &amp; Kashmir. We help every business — big or small — get discovered online and connect with real customers.</p>
     <br/>
     <h3 style="font-family:var(--font-display);font-size:.95rem;margin-bottom:8px">Our Mission</h3>
     <p>Bridge the gap between local businesses and customers across Kashmir. From Lal Chowk shops to Gulmarg hotels — we put every business on top.</p>
@@ -1778,7 +1776,12 @@ function renderBizList(containerId, bizList) {
       </div>
     </div>`).join('');
 }
-function renderStars(r) { return '<div class="stars">'+[1,2,3,4,5].map(i=>`<span class="star ${i<=r?'filled':''}">★</span>`).join('')+'</div>'; }
+function renderStars(r) {
+  const rounded = Math.round(r || 0);
+  return '<div class="stars">' + [1,2,3,4,5].map(i =>
+    `<span class="star ${i <= rounded ? 'filled' : ''}">★</span>`
+  ).join('') + '</div>';
+}
 
 // ══════════════════════════════════════
 //  SEARCH
@@ -1808,7 +1811,7 @@ async function openBizDetail(bizId) {
     document.getElementById('detail-logo').src = b.logo_url||''; document.getElementById('detail-logo').alt = b.name+' logo';
     document.getElementById('detail-name').textContent = b.name;
     document.getElementById('detail-type').textContent = b.type;
-    document.getElementById('detail-stars').innerHTML = [1,2,3,4,5].map(i=>`<span class="star ${i<=(b.rating||0)?'filled':''}">★</span>`).join('');
+    document.getElementById('detail-stars').innerHTML = [1,2,3,4,5].map(i=>`<span class="star ${i<=Math.round(b.rating||0)?'filled':''}">★</span>`).join('');
     document.getElementById('detail-rating-text').textContent = b.rating ? `${b.rating.toFixed(1)} (${b.review_count||0})` : 'No reviews yet';
     document.getElementById('detail-desc').textContent = b.description||'';
     document.getElementById('detail-addr').textContent = b.address||'';
