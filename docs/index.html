@@ -189,7 +189,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 
 <style>
 /* ─── RESET & VARIABLES ─── */
@@ -946,8 +945,8 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
   <div class="scroll-body"><div class="section">
     <div style="text-align:center;padding:8px 0 20px"><div style="font-size:2.5rem;margin-bottom:8px">🔥</div><h1 style="font-family:var(--font-display);font-size:1.4rem;font-weight:800;margin-bottom:6px">MBP Premium</h1><p class="text-muted text-sm">Rank your MakeMeTop Business Profile at the top<br/>across Srinagar &amp; J&amp;K</p></div>
     <div class="price-card"><h3>MBP Free</h3><div class="price">₹0 <span>/ forever</span></div><ul><li>Create your MBP on MakeMeTop</li><li>Business profile with photos &amp; gallery</li><li>Customer reviews &amp; ratings</li><li>Call, WhatsApp &amp; Website buttons</li><li>Google-indexed MBP with schema</li><li>QR code for easy sharing</li></ul><button class="btn btn-ghost" disabled>Current Plan</button></div>
-    <div class="price-card featured" style="margin-top:20px"><div class="popular-tag">🔥 Most Popular</div><h3>MBP Premium</h3><div class="price">₹499 <span>/ month</span></div><ul><li>Priority MBP – appear first on Google</li><li>Featured in "Top MBPs in Srinagar"</li><li>🏆 Premium badge on your MBP</li><li>10x more profile visibility</li><li>Analytics dashboard for your MBP</li><li>Priority approval within 2 hours</li></ul><button class="btn" style="background:#fff;color:var(--primary)" onclick="startPayment('premium_monthly',499,'MBP Premium – 1 Month')">🔥 Get MBP Premium – ₹499</button></div>
-    <div class="price-card" style="margin-top:14px"><h3>🎯 MBP Boost Ad</h3><div class="price">₹199 <span>/ week</span></div><ul><li>Homepage banner for your MBP</li><li>Top of search results in J&amp;K</li><li>5x more MBP profile views</li><li>Targeted local audience in Kashmir</li></ul><button class="btn btn-accent" onclick="startPayment('boost_weekly',199,'MBP Boost Ad – 1 Week')">🚀 Boost My MBP – ₹199</button></div>
+    <div class="price-card featured" style="margin-top:20px"><div class="popular-tag">🔥 Most Popular</div><h3>MBP Premium</h3><div class="price">₹499 <span>/ month</span></div><ul><li>Priority MBP – appear first on Google</li><li>Featured in "Top MBPs in Srinagar"</li><li>🏆 Premium badge on your MBP</li><li>10x more profile visibility</li><li>Analytics dashboard for your MBP</li><li>Priority approval within 2 hours</li></ul><button class="btn" style="background:rgba(255,255,255,.2);color:#fff;cursor:not-allowed;opacity:.8" disabled>🚀 Coming Soon</button></div>
+    <div class="price-card" style="margin-top:14px"><h3>🎯 MBP Boost Ad</h3><div class="price">₹199 <span>/ week</span></div><ul><li>Homepage banner for your MBP</li><li>Top of search results in J&amp;K</li><li>5x more MBP profile views</li><li>Targeted local audience in Kashmir</li></ul><button class="btn btn-ghost" style="cursor:not-allowed;opacity:.7" disabled>🚀 Coming Soon</button></div>
   </div></div>
 </div>
 
@@ -1057,6 +1056,79 @@ hr.sep{border:none;border-top:1px solid var(--gray100);margin:0}
     <textarea id="chat-text" placeholder="Type your message..." rows="1" aria-label="Chat message" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChatMsg()}"></textarea>
     <button onclick="sendChatMsg()" aria-label="Send message"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
   </div>
+</div>
+
+<!-- ══ PAGE: ABOUT ══ -->
+<div id="page-about" class="page">
+  <header class="top-header"><button class="back-btn" onclick="navBack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button><div class="title">About MakeMeTop</div><div class="spacer"></div></header>
+  <div class="scroll-body"><div class="section" style="line-height:1.7;font-size:.88rem;color:var(--gray700)">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:800">Make<span style="color:var(--accent)">Me</span>Top</div>
+      <p class="text-muted">Srinagar's #1 Local Business Directory</p>
+    </div>
+    <h2 style="font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:8px">About Us</h2>
+    <p><strong>MakeMeTop</strong> is Srinagar's #1 local business directory for Jammu &amp; Kashmir. We help every business — big or small — get discovered online and connect with real customers.</p>
+    <br/>
+    <h3 style="font-family:var(--font-display);font-size:.95rem;margin-bottom:8px">Our Mission</h3>
+    <p>Bridge the gap between local businesses and customers across Kashmir. From Lal Chowk shops to Gulmarg hotels — we put every business on top.</p>
+    <br/>
+    <h3 style="font-family:var(--font-display);font-size:.95rem;margin-bottom:8px">Why MakeMeTop?</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+      <li>✅ Free business listings — no hidden cost</li>
+      <li>✅ Google-indexed profiles with Schema markup</li>
+      <li>✅ Verified reviews from real customers</li>
+      <li>✅ Direct contact via Call, WhatsApp &amp; Website</li>
+      <li>✅ Live chat customer support</li>
+      <li>✅ Mobile-first PWA — works offline</li>
+    </ul>
+    <br/>
+    <p><strong>Domain:</strong> <a href="https://makemetop.in" style="color:var(--accent2)">makemetop.in</a></p>
+    <br/><p style="color:var(--gray500);font-size:.8rem">MBP v4.0.0 · Srinagar, J&amp;K</p>
+  </div></div>
+</div>
+
+<!-- ══ PAGE: PRIVACY ══ -->
+<div id="page-privacy" class="page">
+  <header class="top-header"><button class="back-btn" onclick="navBack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button><div class="title">Privacy Policy</div><div class="spacer"></div></header>
+  <div class="scroll-body"><div class="section" style="line-height:1.75;font-size:.85rem;color:var(--gray700)">
+    <p style="color:var(--gray500);margin-bottom:12px">Last updated: April 2025</p>
+    <h2 style="font-family:var(--font-display);font-size:.95rem;margin-bottom:6px">Data We Collect</h2>
+    <p>We collect your name, email, and business information only to provide our services. We do not sell your data to third parties.</p>
+    <br/><h3 style="font-family:var(--font-display);font-size:.9rem;margin-bottom:6px">How We Use It</h3>
+    <p>Your data is used to create and manage your business listings, enable reviews, and provide customer support via our live chat system.</p>
+    <br/><h3 style="font-family:var(--font-display);font-size:.9rem;margin-bottom:6px">Data Security</h3>
+    <p>All data is secured via Firebase (Google Cloud) with strict Firestore security rules. Only you can access your own data.</p>
+    <br/><h3 style="font-family:var(--font-display);font-size:.9rem;margin-bottom:6px">Your Rights</h3>
+    <p>You can edit or delete your reviews at any time. To delete your account, contact us via live chat.</p>
+  </div></div>
+</div>
+
+<!-- ══ PAGE: TERMS ══ -->
+<div id="page-terms" class="page">
+  <header class="top-header"><button class="back-btn" onclick="navBack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button><div class="title">Terms &amp; Conditions</div><div class="spacer"></div></header>
+  <div class="scroll-body"><div class="section" style="line-height:1.75;font-size:.85rem;color:var(--gray700)">
+    <p style="color:var(--gray500);margin-bottom:12px">Last updated: April 2025</p>
+    <h2 style="font-family:var(--font-display);font-size:.95rem;margin-bottom:6px">Use of Service</h2>
+    <p>MakeMeTop (makemetop.in) is a local business directory for Srinagar and Kashmir. By using our service, you agree to provide accurate business information and not to misuse the platform.</p>
+    <br/><h3 style="font-family:var(--font-display);font-size:.9rem;margin-bottom:6px">User Responsibilities</h3>
+    <p>Business owners are responsible for accuracy of their listings. Reviews must be genuine. Fake reviews will result in account termination.</p>
+    <br/><h3 style="font-family:var(--font-display);font-size:.9rem;margin-bottom:6px">One Review Per Business</h3>
+    <p>Each user may submit only one review per business to ensure fairness and authenticity.</p>
+  </div></div>
+</div>
+
+<!-- ══ PAGE: REFUND ══ -->
+<div id="page-refund" class="page">
+  <header class="top-header"><button class="back-btn" onclick="navBack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button><div class="title">Refund Policy</div><div class="spacer"></div></header>
+  <div class="scroll-body"><div class="section" style="line-height:1.75;font-size:.85rem;color:var(--gray700)">
+    <p style="color:var(--gray500);margin-bottom:12px">Last updated: April 2025</p>
+    <h2 style="font-family:var(--font-display);font-size:.95rem;margin-bottom:6px">Refund Eligibility</h2>
+    <p>Refunds available within 7 days if Premium service was not activated or technical error occurred.</p>
+    <br/><h3 style="font-family:var(--font-display);font-size:.9rem;margin-bottom:6px">Non-Refundable</h3>
+    <p>Partially used subscription periods and Ad campaigns that have started are not refundable.</p>
+    <br/><h3 style="font-family:var(--font-display);font-size:.9rem;margin-bottom:6px">How to Request</h3>
+    <p>Contact us via live chat. Refunds processed within 5–7 business days.</p>
+  </div></div>
 </div>
 
 <!-- ══ PAGE: ADMIN ══ -->
@@ -1249,7 +1321,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, sendEmailVerification, sendPasswordResetEmail, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, query, where, orderBy, serverTimestamp, getDoc, onSnapshot, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// ── FIREBASE CONFIG — get from console.firebase.google.com ──
+/ ── FIREBASE CONFIG — get from console.firebase.google.com ──
   const firebaseConfig = {
   apiKey: "AIzaSyDwx-GoLV3-T5_zEURlqUb1LXa48gbqhM8",
   authDomain: "live-voting-b236f.firebaseapp.com",
@@ -1262,8 +1334,6 @@ import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, q
 const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbycICnJVrzE-0Sj2_FajqWU9qy7ggm_UTNLxxHfvvApnePatDFTjdrthrz66vs3Eqp7/exec";
 // ⬇ Deploy Code.gs → paste your Apps Script URL:
 const EMAIL_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbycICnJVrzE-0Sj2_FajqWU9qy7ggm_UTNLxxHfvvApnePatDFTjdrthrz66vs3Eqp7/exec";
-// ⬇ Your Razorpay KEY ID (starts with rzp_live_ or rzp_test_):
-const RAZORPAY_KEY_ID  = "rzp_live_RfCKqIEK99AyBA";
 // ⬇ Your admin email(s) — who can access the admin panel:
 const ADMIN_EMAILS = ["abrarrtallks@gmail.com"];
 
@@ -1282,7 +1352,6 @@ window._authFns = { createUserWithEmailAndPassword, signInWithEmailAndPassword, 
 window.ADMIN_EMAILS = ADMIN_EMAILS;
 window.DRIVE_UPLOAD_URL = DRIVE_UPLOAD_URL;
 window.EMAIL_SCRIPT_URL = EMAIL_SCRIPT_URL;
-window.RAZORPAY_KEY_ID  = RAZORPAY_KEY_ID;
 
 onAuthStateChanged(auth, async user => {
   window._currentUser = user;
@@ -1295,7 +1364,6 @@ onAuthStateChanged(auth, async user => {
     if (window.updateSettingsUI) window.updateSettingsUI(user);
     if (window.loadDashboard) window.loadDashboard();
     if (window.checkAdminAccess) window.checkAdminAccess(user);
-    if (window.checkPremiumStatus) window.checkPremiumStatus(user);
     await handleFirstLogin(user);
   }
 });
@@ -2529,96 +2597,6 @@ window.addEventListener('load', () => {
 });
 
 // ══════════════════════════════════════
-//  RAZORPAY PAYMENT + PREMIUM ACTIVATION
-// ══════════════════════════════════════
-async function startPayment(planId, amountInr, planName) {
-  if (!window._currentUser) { showAuth('login'); return; }
-  if (!window.Razorpay) { showToast('❌ Payment loading failed. Please refresh.'); return; }
-  const key = window.RAZORPAY_KEY_ID;
-  if (!key || key.includes('PASTE')) { showToast('⚠️ Razorpay key not configured yet'); return; }
-  const user = window._currentUser;
-  const options = {
-    key,
-    amount:      amountInr * 100,
-    currency:    'INR',
-    name:        'MBP – MakeMeTop Business Profile',
-    description: planName,
-    image:       './icon-192.png',
-    prefill: { name: user.displayName || '', email: user.email || '' },
-    notes: { user_id: user.uid, user_email: user.email, plan_id: planId, platform: 'MBP' },
-    theme: { color: '#1F1F1F' },
-    handler: async (response) => {
-      showToast('✅ Payment done! Activating...');
-      await activatePremium(user, planId, amountInr, planName, response.razorpay_payment_id);
-    },
-    modal: { ondismiss: () => showToast('ℹ️ Payment cancelled') }
-  };
-  const rzp = new window.Razorpay(options);
-  rzp.on('payment.failed', e => showToast('❌ Payment failed: ' + (e.error?.description || 'Try again')));
-  rzp.open();
-}
-
-async function activatePremium(user, planId, amount, planName, paymentId) {
-  const { doc, setDoc, updateDoc, serverTimestamp, collection, addDoc } = window._collections;
-  const isWeekly = planId.includes('boost');
-  const expiry = new Date(Date.now() + (isWeekly ? 7 : 30) * 24 * 60 * 60 * 1000);
-  try {
-    // Save payment record
-    await addDoc(collection(window._db, 'payments'), {
-      user_id: user.uid, user_email: user.email, plan_id: planId,
-      plan_name: planName, amount_inr: amount, payment_id: paymentId,
-      status: 'paid', paid_at: serverTimestamp(), expires_at: expiry.toISOString()
-    });
-    // Update user document
-    const userRef = doc(window._db, 'users', user.uid);
-    await setDoc(userRef, {
-      uid: user.uid, email: user.email, is_premium: true,
-      premium_plan: planId, premium_expiry: expiry.toISOString(),
-      last_payment_id: paymentId
-    }, { merge: true });
-    window._isPremium = true;
-    showPremiumBadge();
-    // Send confirmation email
-    sendPaymentConfirmEmail(user.email, user.displayName || user.email?.split('@')[0], planName, amount, paymentId, expiry);
-    showToast('🔥 MBP Premium activated! Enjoy your benefits.');
-    navTo('home');
-  } catch(e) {
-    console.error('Premium activation error:', e);
-    showToast('⚠️ Payment done but activation failed. Contact support: ' + paymentId);
-  }
-}
-
-function showPremiumBadge() {
-  const avatar = document.getElementById('settings-avatar');
-  if (avatar) { avatar.style.background = 'linear-gradient(135deg,#F5A623,#e09410)'; avatar.title = '🔥 MBP Premium'; }
-}
-
-async function sendPaymentConfirmEmail(email, name, planName, amount, paymentId, expiry) {
-  if (!email || !window.EMAIL_SCRIPT_URL || window.EMAIL_SCRIPT_URL.includes('PASTE')) return;
-  try {
-    await fetch(window.EMAIL_SCRIPT_URL, {
-      method: 'POST',
-      body: JSON.stringify({ action: 'sendPaymentConfirm', to: email, name, planName, amount, paymentId, expiry: expiry.toLocaleDateString('en-IN') }),
-      headers: { 'Content-Type': 'text/plain' }
-    });
-  } catch(e) {}
-}
-
-async function checkPremiumStatus(user) {
-  if (!user) return;
-  const { doc, getDoc } = window._collections;
-  try {
-    const snap = await getDoc(doc(window._db, 'users', user.uid));
-    if (snap.exists()) {
-      const d = snap.data();
-      if (d.is_premium && d.premium_expiry && new Date(d.premium_expiry) > new Date()) {
-        window._isPremium = true; showPremiumBadge();
-      }
-    }
-  } catch(e) {}
-}
-
-// ══════════════════════════════════════
 //  DEEP LINK
 // ══════════════════════════════════════
 window.addEventListener('DOMContentLoaded',()=>{
@@ -2655,7 +2633,7 @@ if ('serviceWorker' in navigator) {
 // ══════════════════════════════════════
 //  EXPOSE GLOBALS
 // ══════════════════════════════════════
-Object.assign(window,{navTo,navBack,tryAddBusiness,loadHomeBiz,loadDashboard,filterCat,openBizDetail,callBusiness,whatsappBusiness,openWebsite,shareBusiness,openReviewModal,editReview,deleteReview,selectStar,submitReview,previewImg,previewGal,toggleService,saveDraft,autosaveDraft,submitBusiness,openEditBizModal,saveEditBusiness,deleteMyBusiness,openBizDetailAndEdit,toggleFaq,sendContactMsg,sendVerification,openModal,closeModal,openLightbox,logout,changePassword,sendPasswordReset,showToast,loadAdmin,loadAdminTab,adminAction,adminDelete,sendChatMsg,sendAdminReply,openAdminChatThread,showWelcomeModal,triggerInstall,updateInstallButtonVisibility,showInstallInstructions,showMainApp,showAuth,updateSettingsUI,checkAdminAccess,showVerifyBanner,loadDashboard,loadHomeBiz,startPayment,activatePremium,checkPremiumStatus,showPremiumBadge,openClaimModal,submitClaimRequest,handleClaimAction,adminResolveClaim,loadAdminClaims});
+Object.assign(window,{navTo,navBack,tryAddBusiness,loadHomeBiz,loadDashboard,filterCat,openBizDetail,callBusiness,whatsappBusiness,openWebsite,shareBusiness,openReviewModal,editReview,deleteReview,selectStar,submitReview,previewImg,previewGal,toggleService,saveDraft,autosaveDraft,submitBusiness,openEditBizModal,saveEditBusiness,deleteMyBusiness,openBizDetailAndEdit,toggleFaq,sendContactMsg,sendVerification,openModal,closeModal,openLightbox,logout,changePassword,sendPasswordReset,showToast,loadAdmin,loadAdminTab,adminAction,adminDelete,sendChatMsg,sendAdminReply,openAdminChatThread,showWelcomeModal,triggerInstall,updateInstallButtonVisibility,showInstallInstructions,showMainApp,showAuth,updateSettingsUI,checkAdminAccess,showVerifyBanner,loadDashboard,loadHomeBiz,openClaimModal,submitClaimRequest,handleClaimAction,adminResolveClaim,loadAdminClaims});
 
 // ── Safety net: if Firebase auth resolved before this script ran ──
 if (window._currentUser !== undefined) {
