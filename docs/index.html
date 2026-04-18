@@ -399,108 +399,369 @@
 
       <div class="form-group"><label class="form-label">Business Name *</label><input type="text" id="biz-name" class="form-input" placeholder="e.g. Kashmir Sweets, Srinagar" oninput="autosaveDraft()"/></div>
 
-      <!-- FULL business type list from requirements -->
-      <div class="form-group"><label class="form-label">Business Type *</label>
-        <select id="biz-type" class="form-select" onchange="autosaveDraft()">
-          <option value="">Select business type...</option>
-          <optgroup label="Food & Lifestyle">
-            <option>Restaurant & Food Services</option>
-            <option>Beauty & Salon</option>
-            <option>Fitness & Gym</option>
-            <option>Fashion & Apparel</option>
-          </optgroup>
-          <optgroup label="Commerce">
-            <option>Retail & E-commerce</option>
-            <option>Real Estate & Property</option>
-            <option>Finance & Banking</option>
-          </optgroup>
-          <optgroup label="Health & Education">
-            <option>Healthcare & Medical</option>
-            <option>Education & Training</option>
-          </optgroup>
-          <optgroup label="Technology & Digital">
-            <option>Technology & IT Services</option>
-            <option>Web Development</option>
-            <option>Mobile App Development</option>
-            <option>Digital Marketing</option>
-            <option>Graphic Design</option>
-            <option>UI/UX Design</option>
-            <option>Content Creation</option>
-            <option>Photography & Videography</option>
-            <option>Advertising Agency</option>
-          </optgroup>
-          <optgroup label="Services">
-            <option>Hospitality & Tourism</option>
-            <option>Transportation & Logistics</option>
-            <option>Event Planning</option>
-            <option>Wedding Services</option>
-            <option>Home Services (Cleaning, Repair)</option>
-            <option>Laundry & Dry Cleaning</option>
-            <option>Legal Services</option>
-            <option>Consulting</option>
-            <option>Accounting & Tax</option>
-            <option>Business Services</option>
-            <option>Security Services</option>
-          </optgroup>
-          <optgroup label="Industry">
-            <option>Manufacturing</option>
-            <option>Construction</option>
-            <option>Engineering Services</option>
-            <option>Automobile Services</option>
-            <option>Energy & Utilities</option>
-            <option>Agriculture & Farming</option>
-          </optgroup>
-          <optgroup label="Media & Entertainment">
-            <option>Media & Publishing</option>
-            <option>Film & Entertainment</option>
-            <option>Gaming & Esports</option>
-            <option>Music & Audio Production</option>
-          </optgroup>
-          <optgroup label="Other">
-            <option>Non-Profit / NGO</option>
-            <option>Government & Public Services</option>
-            <option>Research & Development</option>
-            <option>Other</option>
-          </optgroup>
-        </select>
-      </div>
+     <div class="form-group">
+  <label class="form-label">Business Type *</label>
 
-      <!-- Full services list -->
-      <div class="form-group"><label class="form-label">Services Offered</label>
-        <div class="chip-group" id="services-chips">
-          <div class="chip" onclick="toggleService(this,'Delivery')">Delivery</div>
-          <div class="chip" onclick="toggleService(this,'Pickup')">Pickup</div>
-          <div class="chip" onclick="toggleService(this,'Takeaway')">Takeaway</div>
-          <div class="chip" onclick="toggleService(this,'Home Service')">Home Service</div>
-          <div class="chip" onclick="toggleService(this,'On-site Service')">On-site Service</div>
-          <div class="chip" onclick="toggleService(this,'24/7 Service')">24/7 Service</div>
-          <div class="chip" onclick="toggleService(this,'Online Booking')">Online Booking</div>
-          <div class="chip" onclick="toggleService(this,'Appointments')">Appointments</div>
-          <div class="chip" onclick="toggleService(this,'Consultation')">Consultation</div>
-          <div class="chip" onclick="toggleService(this,'Customer Support')">Customer Support</div>
-          <div class="chip" onclick="toggleService(this,'Custom Orders')">Custom Orders</div>
-          <div class="chip" onclick="toggleService(this,'Bulk Orders')">Bulk Orders</div>
-          <div class="chip" onclick="toggleService(this,'Subscriptions')">Subscriptions</div>
-          <div class="chip" onclick="toggleService(this,'Installation')">Installation</div>
-          <div class="chip" onclick="toggleService(this,'Repair')">Repair</div>
-          <div class="chip" onclick="toggleService(this,'Maintenance')">Maintenance</div>
-          <div class="chip" onclick="toggleService(this,'Technical Support')">Technical Support</div>
-          <div class="chip" onclick="toggleService(this,'Web Development')">Web Development</div>
-          <div class="chip" onclick="toggleService(this,'App Development')">App Development</div>
-          <div class="chip" onclick="toggleService(this,'SEO Services')">SEO Services</div>
-          <div class="chip" onclick="toggleService(this,'Digital Marketing')">Digital Marketing</div>
-          <div class="chip" onclick="toggleService(this,'UI/UX Design')">UI/UX Design</div>
-          <div class="chip" onclick="toggleService(this,'Consulting')">Consulting</div>
-          <div class="chip" onclick="toggleService(this,'Training')">Training</div>
-          <div class="chip" onclick="toggleService(this,'Workshops')">Workshops</div>
-          <div class="chip" onclick="toggleService(this,'Event Services')">Event Services</div>
-          <div class="chip" onclick="toggleService(this,'Catering')">Catering</div>
-          <div class="chip" onclick="toggleService(this,'Decoration')">Decoration</div>
-          <div class="chip" onclick="toggleService(this,'Online Payment')">Online Payment</div>
-          <div class="chip" onclick="toggleService(this,'Cash on Delivery')">Cash on Delivery</div>
-          <div class="chip" onclick="toggleService(this,'EMI Available')">EMI Available</div>
-        </div>
-      </div>
+  <div class="select-wrapper">
+    <i class="fas fa-search"></i>
+    <select id="biz-type" class="form-select" onchange="autosaveDraft()">
+      <option value="">Select business type...</option>
+       <optgroup label="Food & Beverage">
+      <option>Restaurant & Food Services</option>
+      <option>Cafe & Coffee Shop</option>
+      <option>Bakery</option>
+      <option>Fast Food Outlet</option>
+      <option>Sweet Shop</option>
+      <option>Catering Services</option>
+      <option>Cloud Kitchen</option>
+      <option>Ice Cream Parlour</option>
+      <option>Juice Bar</option>
+      <option>Tea Stall / Tea Shop</option>
+      <option>Food Truck</option>
+      <option>Grocery & Supermarket</option>
+      <option>Organic Food Store</option>
+      <option>Meat & Poultry Shop</option>
+      <option>Fish & Seafood Business</option>
+    </optgroup>
+
+    <optgroup label="Beauty, Fashion & Lifestyle">
+      <option>Beauty & Salon</option>
+      <option>Barber Shop</option>
+      <option>Spa & Wellness</option>
+      <option>Makeup Artist</option>
+      <option>Skincare Clinic</option>
+      <option>Fashion & Apparel</option>
+      <option>Boutique</option>
+      <option>Tailoring & Stitching</option>
+      <option>Jewellery Store</option>
+      <option>Footwear Business</option>
+      <option>Perfume & Cosmetics</option>
+      <option>Gift Shop</option>
+      <option>Handicrafts Business</option>
+    </optgroup>
+
+    <optgroup label="Health & Medical">
+      <option>Healthcare & Medical</option>
+      <option>Hospital</option>
+      <option>Clinic</option>
+      <option>Dental Clinic</option>
+      <option>Physiotherapy Center</option>
+      <option>Diagnostic Lab</option>
+      <option>Pharmacy / Medical Store</option>
+      <option>Homeopathy Clinic</option>
+      <option>Ayurveda Center</option>
+      <option>Optical Store</option>
+      <option>Mental Health Services</option>
+      <option>Veterinary Services</option>
+    </optgroup>
+
+    <optgroup label="Education & Training">
+      <option>Education & Training</option>
+      <option>School</option>
+      <option>College / Institute</option>
+      <option>Coaching Center</option>
+      <option>Tuition Services</option>
+      <option>Computer Training Institute</option>
+      <option>Language Institute</option>
+      <option>Skill Development Center</option>
+      <option>Online Course Business</option>
+      <option>Library & Study Center</option>
+      <option>Music & Dance Academy</option>
+    </optgroup>
+
+    <optgroup label="Technology & Digital">
+      <option>Technology & IT Services</option>
+      <option>Software Development</option>
+      <option>Web Development</option>
+      <option>Mobile App Development</option>
+      <option>Digital Marketing</option>
+      <option>SEO Agency</option>
+      <option>Social Media Marketing</option>
+      <option>Graphic Design</option>
+      <option>UI/UX Design</option>
+      <option>Content Creation</option>
+      <option>Photography & Videography</option>
+      <option>Advertising Agency</option>
+      <option>Branding Agency</option>
+      <option>Video Editing Services</option>
+      <option>Printing & Publishing</option>
+      <option>Cyber Security Services</option>
+      <option>Data Analytics</option>
+      <option>Cloud Services</option>
+      <option>IT Hardware & Networking</option>
+      <option>Computer Repair Services</option>
+      <option>Electronics Repair</option>
+    </optgroup>
+
+    <optgroup label="Retail & Commerce">
+      <option>Retail & E-commerce</option>
+      <option>General Store</option>
+      <option>Department Store</option>
+      <option>Mobile Shop</option>
+      <option>Electronics Store</option>
+      <option>Furniture Store</option>
+      <option>Home Decor Business</option>
+      <option>Kitchenware Store</option>
+      <option>Book Store</option>
+      <option>Stationery Shop</option>
+      <option>Toy Store</option>
+      <option>Sports Goods Store</option>
+      <option>Pet Shop</option>
+      <option>Hardware Store</option>
+      <option>Building Material Supplier</option>
+    </optgroup>
+
+    <optgroup label="Home, Repair & Local Services">
+      <option>Home Services (Cleaning, Repair)</option>
+      <option>Electrician Services</option>
+      <option>Plumbing Services</option>
+      <option>Carpentry Services</option>
+      <option>Painter Services</option>
+      <option>Interior Design</option>
+      <option>Exterior Design</option>
+      <option>Architecture Services</option>
+      <option>Pest Control</option>
+      <option>Laundry & Dry Cleaning</option>
+      <option>Packers & Movers</option>
+      <option>Water Supply Services</option>
+      <option>Security Services</option>
+      <option>CCTV Installation</option>
+    </optgroup>
+
+    <optgroup label="Real Estate & Construction">
+      <option>Real Estate & Property</option>
+      <option>Property Dealer</option>
+      <option>Construction</option>
+      <option>Builder & Developer</option>
+      <option>Civil Contractor</option>
+      <option>Land Survey Services</option>
+      <option>Engineering Services</option>
+      <option>Project Management Services</option>
+    </optgroup>
+
+    <optgroup label="Finance, Legal & Consulting">
+      <option>Finance & Banking</option>
+      <option>Insurance Services</option>
+      <option>Loan & Mortgage Services</option>
+      <option>Investment Advisory</option>
+      <option>Accounting & Tax</option>
+      <option>CA / Audit Services</option>
+      <option>Legal Services</option>
+      <option>Business Consulting</option>
+      <option>HR & Recruitment</option>
+      <option>Corporate Services</option>
+      <option>Business Services</option>
+    </optgroup>
+
+    <optgroup label="Travel, Hospitality & Events">
+      <option>Hospitality & Tourism</option>
+      <option>Travel Agency</option>
+      <option>Tour Operator</option>
+      <option>Hotel</option>
+      <option>Guest House</option>
+      <option>Houseboat Services</option>
+      <option>Homestay</option>
+      <option>Resort</option>
+      <option>Car Rental</option>
+      <option>Taxi Services</option>
+      <option>Transportation & Logistics</option>
+      <option>Courier & Delivery Services</option>
+      <option>Event Planning</option>
+      <option>Wedding Services</option>
+      <option>Decoration Services</option>
+      <option>Event Photography</option>
+    </optgroup>
+
+    <optgroup label="Automobile & Transport">
+      <option>Automobile Services</option>
+      <option>Auto Repair Workshop</option>
+      <option>Bike Repair Shop</option>
+      <option>Car Washing Services</option>
+      <option>Auto Parts Store</option>
+      <option>Tyre Shop</option>
+      <option>Fuel Station</option>
+      <option>Driving School</option>
+    </optgroup>
+
+    <optgroup label="Industry & Manufacturing">
+      <option>Manufacturing</option>
+      <option>Textile Manufacturing</option>
+      <option>Food Processing</option>
+      <option>Furniture Manufacturing</option>
+      <option>Steel & Metal Works</option>
+      <option>Plastic Products Manufacturing</option>
+      <option>Packaging Industry</option>
+      <option>Agriculture & Farming</option>
+      <option>Dairy Farming</option>
+      <option>Poultry Farming</option>
+      <option>Horticulture</option>
+      <option>Energy & Utilities</option>
+      <option>Solar Energy Services</option>
+    </optgroup>
+
+    <optgroup label="Media & Entertainment">
+      <option>Media & Publishing</option>
+      <option>News & Magazine</option>
+      <option>Film & Entertainment</option>
+      <option>Music & Audio Production</option>
+      <option>Gaming & Esports</option>
+      <option>YouTube Channel / Creator</option>
+      <option>Podcast Production</option>
+      <option>Influencer / Personal Brand</option>
+    </optgroup>
+
+    <optgroup label="Community & Public Services">
+      <option>Non-Profit / NGO</option>
+      <option>Government & Public Services</option>
+      <option>Research & Development</option>
+      <option>Religious Organization</option>
+      <option>Community Center</option>
+      <option>Charity Organization</option>
+    </optgroup>
+
+    <optgroup label="Other Professional Services">
+      <option>Fitness & Gym</option>
+      <option>Yoga Studio</option>
+      <option>Personal Trainer</option>
+      <option>Sports Academy</option>
+      <option>Consulting</option>
+      <option>Freelancer</option>
+      <option>Personal Portfolio</option>
+      <option>Startup</option>
+      <option>Franchise Business</option>
+      <option>Import & Export</option>
+      <option>Wholesale Business</option>
+      <option>Other</option>
+    </optgroup>
+    </select>
+  </div>
+</div>
+
+      <!-- FULL SERVICES LIST (100+) -->
+<div class="form-group">
+  <label class="form-label">Services Offered</label>
+
+  <div class="chip-group" id="services-chips">
+
+    <!-- Basic -->
+    <div class="chip" onclick="toggleService(this,'Delivery')">Delivery</div>
+    <div class="chip" onclick="toggleService(this,'Pickup')">Pickup</div>
+    <div class="chip" onclick="toggleService(this,'Takeaway')">Takeaway</div>
+    <div class="chip" onclick="toggleService(this,'Home Service')">Home Service</div>
+    <div class="chip" onclick="toggleService(this,'On-site Service')">On-site Service</div>
+    <div class="chip" onclick="toggleService(this,'24/7 Service')">24/7 Service</div>
+    <div class="chip" onclick="toggleService(this,'Emergency Service')">Emergency Service</div>
+    <div class="chip" onclick="toggleService(this,'Same Day Service')">Same Day Service</div>
+
+    <!-- Booking -->
+    <div class="chip" onclick="toggleService(this,'Online Booking')">Online Booking</div>
+    <div class="chip" onclick="toggleService(this,'Appointments')">Appointments</div>
+    <div class="chip" onclick="toggleService(this,'Walk-in Available')">Walk-in</div>
+    <div class="chip" onclick="toggleService(this,'Consultation')">Consultation</div>
+    <div class="chip" onclick="toggleService(this,'Free Consultation')">Free Consultation</div>
+
+    <!-- Customer -->
+    <div class="chip" onclick="toggleService(this,'Customer Support')">Customer Support</div>
+    <div class="chip" onclick="toggleService(this,'24/7 Support')">24/7 Support</div>
+    <div class="chip" onclick="toggleService(this,'Live Chat')">Live Chat</div>
+    <div class="chip" onclick="toggleService(this,'After Sales Service')">After Sales</div>
+
+    <!-- Orders -->
+    <div class="chip" onclick="toggleService(this,'Custom Orders')">Custom Orders</div>
+    <div class="chip" onclick="toggleService(this,'Bulk Orders')">Bulk Orders</div>
+    <div class="chip" onclick="toggleService(this,'Subscriptions')">Subscriptions</div>
+    <div class="chip" onclick="toggleService(this,'Pre Orders')">Pre Orders</div>
+
+    <!-- Payment -->
+    <div class="chip" onclick="toggleService(this,'Online Payment')">Online Payment</div>
+    <div class="chip" onclick="toggleService(this,'Cash on Delivery')">COD</div>
+    <div class="chip" onclick="toggleService(this,'UPI Payment')">UPI</div>
+    <div class="chip" onclick="toggleService(this,'Card Payment')">Card Payment</div>
+    <div class="chip" onclick="toggleService(this,'EMI Available')">EMI</div>
+
+    <!-- Tech -->
+    <div class="chip" onclick="toggleService(this,'Web Development')">Web Development</div>
+    <div class="chip" onclick="toggleService(this,'App Development')">App Development</div>
+    <div class="chip" onclick="toggleService(this,'SEO Services')">SEO</div>
+    <div class="chip" onclick="toggleService(this,'Digital Marketing')">Digital Marketing</div>
+    <div class="chip" onclick="toggleService(this,'UI/UX Design')">UI/UX</div>
+    <div class="chip" onclick="toggleService(this,'Graphic Design')">Graphic Design</div>
+    <div class="chip" onclick="toggleService(this,'Social Media Marketing')">SMM</div>
+    <div class="chip" onclick="toggleService(this,'Ads Management')">Ads</div>
+    <div class="chip" onclick="toggleService(this,'Content Creation')">Content</div>
+    <div class="chip" onclick="toggleService(this,'Video Editing')">Video Editing</div>
+
+    <!-- IT -->
+    <div class="chip" onclick="toggleService(this,'Software Development')">Software Dev</div>
+    <div class="chip" onclick="toggleService(this,'Cloud Services')">Cloud</div>
+    <div class="chip" onclick="toggleService(this,'Cyber Security')">Security</div>
+    <div class="chip" onclick="toggleService(this,'IT Support')">IT Support</div>
+
+    <!-- Repair -->
+    <div class="chip" onclick="toggleService(this,'Installation')">Installation</div>
+    <div class="chip" onclick="toggleService(this,'Repair')">Repair</div>
+    <div class="chip" onclick="toggleService(this,'Maintenance')">Maintenance</div>
+    <div class="chip" onclick="toggleService(this,'AMC Service')">AMC</div>
+    <div class="chip" onclick="toggleService(this,'Upgrade Services')">Upgrade</div>
+
+    <!-- Home -->
+    <div class="chip" onclick="toggleService(this,'Cleaning')">Cleaning</div>
+    <div class="chip" onclick="toggleService(this,'Plumbing')">Plumbing</div>
+    <div class="chip" onclick="toggleService(this,'Electrician')">Electrician</div>
+    <div class="chip" onclick="toggleService(this,'Carpentry')">Carpentry</div>
+    <div class="chip" onclick="toggleService(this,'Painting')">Painting</div>
+    <div class="chip" onclick="toggleService(this,'Interior Design')">Interior</div>
+
+    <!-- Travel -->
+    <div class="chip" onclick="toggleService(this,'Tour Packages')">Tour Packages</div>
+    <div class="chip" onclick="toggleService(this,'Hotel Booking')">Hotel Booking</div>
+    <div class="chip" onclick="toggleService(this,'Car Rental')">Car Rental</div>
+    <div class="chip" onclick="toggleService(this,'Guide Services')">Guide</div>
+    <div class="chip" onclick="toggleService(this,'Ticket Booking')">Tickets</div>
+
+    <!-- Events -->
+    <div class="chip" onclick="toggleService(this,'Event Services')">Events</div>
+    <div class="chip" onclick="toggleService(this,'Wedding Planning')">Wedding</div>
+    <div class="chip" onclick="toggleService(this,'Catering')">Catering</div>
+    <div class="chip" onclick="toggleService(this,'Decoration')">Decoration</div>
+    <div class="chip" onclick="toggleService(this,'Photography')">Photography</div>
+    <div class="chip" onclick="toggleService(this,'Videography')">Videography</div>
+
+    <!-- Health -->
+    <div class="chip" onclick="toggleService(this,'Doctor Consultation')">Doctor</div>
+    <div class="chip" onclick="toggleService(this,'Lab Testing')">Lab Test</div>
+    <div class="chip" onclick="toggleService(this,'Home Nursing')">Nursing</div>
+    <div class="chip" onclick="toggleService(this,'Pharmacy Delivery')">Pharmacy</div>
+
+    <!-- Education -->
+    <div class="chip" onclick="toggleService(this,'Coaching')">Coaching</div>
+    <div class="chip" onclick="toggleService(this,'Online Classes')">Online Classes</div>
+    <div class="chip" onclick="toggleService(this,'Workshops')">Workshops</div>
+    <div class="chip" onclick="toggleService(this,'Training')">Training</div>
+    <div class="chip" onclick="toggleService(this,'Certification')">Certification</div>
+
+    <!-- Business -->
+    <div class="chip" onclick="toggleService(this,'Consulting')">Consulting</div>
+    <div class="chip" onclick="toggleService(this,'Accounting')">Accounting</div>
+    <div class="chip" onclick="toggleService(this,'Legal Services')">Legal</div>
+    <div class="chip" onclick="toggleService(this,'HR Services')">HR</div>
+    <div class="chip" onclick="toggleService(this,'Recruitment')">Recruitment</div>
+
+    <!-- Auto -->
+    <div class="chip" onclick="toggleService(this,'Car Wash')">Car Wash</div>
+    <div class="chip" onclick="toggleService(this,'Auto Repair')">Auto Repair</div>
+    <div class="chip" onclick="toggleService(this,'Bike Repair')">Bike Repair</div>
+    <div class="chip" onclick="toggleService(this,'Tyre Services')">Tyre</div>
+
+    <!-- Extra -->
+    <div class="chip" onclick="toggleService(this,'Franchise Available')">Franchise</div>
+    <div class="chip" onclick="toggleService(this,'Wholesale')">Wholesale</div>
+    <div class="chip" onclick="toggleService(this,'Retail')">Retail</div>
+    <div class="chip" onclick="toggleService(this,'Export Services')">Export</div>
+    <div class="chip" onclick="toggleService(this,'Import Services')">Import</div>
+
+  </div>
+</div>
 
       <div class="form-group"><label class="form-label">Description *</label><textarea id="biz-desc" class="form-textarea" placeholder="Describe your business, specialties, and why customers should choose you..." oninput="autosaveDraft()"></textarea></div>
       <div class="form-group"><label class="form-label">Address in Srinagar *</label><input type="text" id="biz-addr" class="form-input" placeholder="e.g. Lal Chowk, Residency Road, Srinagar" oninput="autosaveDraft()"/></div>
@@ -1042,14 +1303,236 @@
     <div class="form-group"><label class="form-label">Business Type *</label>
       <select id="edit-biz-type" class="form-select">
         <option value="">Select type</option>
-        <option>Restaurant & Food Services</option><option>Retail & E-commerce</option><option>Healthcare & Medical</option>
-        <option>Education & Training</option><option>Technology & IT Services</option><option>Web Development</option>
-        <option>Mobile App Development</option><option>Digital Marketing</option><option>Beauty & Salon</option>
-        <option>Finance & Banking</option><option>Hospitality & Tourism</option><option>Real Estate & Property</option>
-        <option>Event Planning</option><option>Wedding Services</option><option>Home Services (Cleaning, Repair)</option>
-        <option>Legal Services</option><option>Consulting</option><option>Transportation & Logistics</option><option>Other</option>
-      </select>
-    </div>
+        <optgroup label="Food & Beverage">
+      <option>Restaurant & Food Services</option>
+      <option>Cafe & Coffee Shop</option>
+      <option>Bakery</option>
+      <option>Fast Food Outlet</option>
+      <option>Sweet Shop</option>
+      <option>Catering Services</option>
+      <option>Cloud Kitchen</option>
+      <option>Ice Cream Parlour</option>
+      <option>Juice Bar</option>
+      <option>Tea Stall / Tea Shop</option>
+      <option>Food Truck</option>
+      <option>Grocery & Supermarket</option>
+      <option>Organic Food Store</option>
+      <option>Meat & Poultry Shop</option>
+      <option>Fish & Seafood Business</option>
+    </optgroup>
+
+    <optgroup label="Beauty, Fashion & Lifestyle">
+      <option>Beauty & Salon</option>
+      <option>Barber Shop</option>
+      <option>Spa & Wellness</option>
+      <option>Makeup Artist</option>
+      <option>Skincare Clinic</option>
+      <option>Fashion & Apparel</option>
+      <option>Boutique</option>
+      <option>Tailoring & Stitching</option>
+      <option>Jewellery Store</option>
+      <option>Footwear Business</option>
+      <option>Perfume & Cosmetics</option>
+      <option>Gift Shop</option>
+      <option>Handicrafts Business</option>
+    </optgroup>
+
+    <optgroup label="Health & Medical">
+      <option>Healthcare & Medical</option>
+      <option>Hospital</option>
+      <option>Clinic</option>
+      <option>Dental Clinic</option>
+      <option>Physiotherapy Center</option>
+      <option>Diagnostic Lab</option>
+      <option>Pharmacy / Medical Store</option>
+      <option>Homeopathy Clinic</option>
+      <option>Ayurveda Center</option>
+      <option>Optical Store</option>
+      <option>Mental Health Services</option>
+      <option>Veterinary Services</option>
+    </optgroup>
+
+    <optgroup label="Education & Training">
+      <option>Education & Training</option>
+      <option>School</option>
+      <option>College / Institute</option>
+      <option>Coaching Center</option>
+      <option>Tuition Services</option>
+      <option>Computer Training Institute</option>
+      <option>Language Institute</option>
+      <option>Skill Development Center</option>
+      <option>Online Course Business</option>
+      <option>Library & Study Center</option>
+      <option>Music & Dance Academy</option>
+    </optgroup>
+
+    <optgroup label="Technology & Digital">
+      <option>Technology & IT Services</option>
+      <option>Software Development</option>
+      <option>Web Development</option>
+      <option>Mobile App Development</option>
+      <option>Digital Marketing</option>
+      <option>SEO Agency</option>
+      <option>Social Media Marketing</option>
+      <option>Graphic Design</option>
+      <option>UI/UX Design</option>
+      <option>Content Creation</option>
+      <option>Photography & Videography</option>
+      <option>Advertising Agency</option>
+      <option>Branding Agency</option>
+      <option>Video Editing Services</option>
+      <option>Printing & Publishing</option>
+      <option>Cyber Security Services</option>
+      <option>Data Analytics</option>
+      <option>Cloud Services</option>
+      <option>IT Hardware & Networking</option>
+      <option>Computer Repair Services</option>
+      <option>Electronics Repair</option>
+    </optgroup>
+
+    <optgroup label="Retail & Commerce">
+      <option>Retail & E-commerce</option>
+      <option>General Store</option>
+      <option>Department Store</option>
+      <option>Mobile Shop</option>
+      <option>Electronics Store</option>
+      <option>Furniture Store</option>
+      <option>Home Decor Business</option>
+      <option>Kitchenware Store</option>
+      <option>Book Store</option>
+      <option>Stationery Shop</option>
+      <option>Toy Store</option>
+      <option>Sports Goods Store</option>
+      <option>Pet Shop</option>
+      <option>Hardware Store</option>
+      <option>Building Material Supplier</option>
+    </optgroup>
+
+    <optgroup label="Home, Repair & Local Services">
+      <option>Home Services (Cleaning, Repair)</option>
+      <option>Electrician Services</option>
+      <option>Plumbing Services</option>
+      <option>Carpentry Services</option>
+      <option>Painter Services</option>
+      <option>Interior Design</option>
+      <option>Exterior Design</option>
+      <option>Architecture Services</option>
+      <option>Pest Control</option>
+      <option>Laundry & Dry Cleaning</option>
+      <option>Packers & Movers</option>
+      <option>Water Supply Services</option>
+      <option>Security Services</option>
+      <option>CCTV Installation</option>
+    </optgroup>
+
+    <optgroup label="Real Estate & Construction">
+      <option>Real Estate & Property</option>
+      <option>Property Dealer</option>
+      <option>Construction</option>
+      <option>Builder & Developer</option>
+      <option>Civil Contractor</option>
+      <option>Land Survey Services</option>
+      <option>Engineering Services</option>
+      <option>Project Management Services</option>
+    </optgroup>
+
+    <optgroup label="Finance, Legal & Consulting">
+      <option>Finance & Banking</option>
+      <option>Insurance Services</option>
+      <option>Loan & Mortgage Services</option>
+      <option>Investment Advisory</option>
+      <option>Accounting & Tax</option>
+      <option>CA / Audit Services</option>
+      <option>Legal Services</option>
+      <option>Business Consulting</option>
+      <option>HR & Recruitment</option>
+      <option>Corporate Services</option>
+      <option>Business Services</option>
+    </optgroup>
+
+    <optgroup label="Travel, Hospitality & Events">
+      <option>Hospitality & Tourism</option>
+      <option>Travel Agency</option>
+      <option>Tour Operator</option>
+      <option>Hotel</option>
+      <option>Guest House</option>
+      <option>Houseboat Services</option>
+      <option>Homestay</option>
+      <option>Resort</option>
+      <option>Car Rental</option>
+      <option>Taxi Services</option>
+      <option>Transportation & Logistics</option>
+      <option>Courier & Delivery Services</option>
+      <option>Event Planning</option>
+      <option>Wedding Services</option>
+      <option>Decoration Services</option>
+      <option>Event Photography</option>
+    </optgroup>
+
+    <optgroup label="Automobile & Transport">
+      <option>Automobile Services</option>
+      <option>Auto Repair Workshop</option>
+      <option>Bike Repair Shop</option>
+      <option>Car Washing Services</option>
+      <option>Auto Parts Store</option>
+      <option>Tyre Shop</option>
+      <option>Fuel Station</option>
+      <option>Driving School</option>
+    </optgroup>
+
+    <optgroup label="Industry & Manufacturing">
+      <option>Manufacturing</option>
+      <option>Textile Manufacturing</option>
+      <option>Food Processing</option>
+      <option>Furniture Manufacturing</option>
+      <option>Steel & Metal Works</option>
+      <option>Plastic Products Manufacturing</option>
+      <option>Packaging Industry</option>
+      <option>Agriculture & Farming</option>
+      <option>Dairy Farming</option>
+      <option>Poultry Farming</option>
+      <option>Horticulture</option>
+      <option>Energy & Utilities</option>
+      <option>Solar Energy Services</option>
+    </optgroup>
+
+    <optgroup label="Media & Entertainment">
+      <option>Media & Publishing</option>
+      <option>News & Magazine</option>
+      <option>Film & Entertainment</option>
+      <option>Music & Audio Production</option>
+      <option>Gaming & Esports</option>
+      <option>YouTube Channel / Creator</option>
+      <option>Podcast Production</option>
+      <option>Influencer / Personal Brand</option>
+    </optgroup>
+
+    <optgroup label="Community & Public Services">
+      <option>Non-Profit / NGO</option>
+      <option>Government & Public Services</option>
+      <option>Research & Development</option>
+      <option>Religious Organization</option>
+      <option>Community Center</option>
+      <option>Charity Organization</option>
+    </optgroup>
+
+    <optgroup label="Other Professional Services">
+      <option>Fitness & Gym</option>
+      <option>Yoga Studio</option>
+      <option>Personal Trainer</option>
+      <option>Sports Academy</option>
+      <option>Consulting</option>
+      <option>Freelancer</option>
+      <option>Personal Portfolio</option>
+      <option>Startup</option>
+      <option>Franchise Business</option>
+      <option>Import & Export</option>
+      <option>Wholesale Business</option>
+      <option>Other</option>
+    </optgroup>
+  </select>
+</div>
+      
     <div class="form-group"><label class="form-label">Description *</label><textarea id="edit-biz-desc" class="form-textarea"></textarea></div>
     <div class="form-group"><label class="form-label">Address *</label><input type="text" id="edit-biz-addr" class="form-input"/></div>
     <div class="form-group"><label class="form-label">Phone *</label><input type="tel" id="edit-biz-phone" class="form-input"/></div>
@@ -1057,13 +1540,109 @@
     <div class="form-group"><label class="form-label">Website URL</label><input type="url" id="edit-biz-website" class="form-input" placeholder="https://yourbusiness.com"/></div>
     <div class="form-group"><label class="form-label">Services</label>
       <div class="chip-group" id="edit-services-chips">
-        <div class="chip" onclick="this.classList.toggle('active')">Delivery</div><div class="chip" onclick="this.classList.toggle('active')">Pickup</div>
-        <div class="chip" onclick="this.classList.toggle('active')">Takeaway</div><div class="chip" onclick="this.classList.toggle('active')">Home Service</div>
-        <div class="chip" onclick="this.classList.toggle('active')">Online Booking</div><div class="chip" onclick="this.classList.toggle('active')">Consultation</div>
-        <div class="chip" onclick="this.classList.toggle('active')">Custom Orders</div><div class="chip" onclick="this.classList.toggle('active')">Installation</div>
-        <div class="chip" onclick="this.classList.toggle('active')">Repair</div><div class="chip" onclick="this.classList.toggle('active')">24/7 Service</div>
-      </div>
-    </div>
+        <!-- SERVICES CHIPS (100+) -->
+<div class="chip-group">
+
+<div class="chip" onclick="this.classList.toggle('active')">Delivery</div>
+<div class="chip" onclick="this.classList.toggle('active')">Pickup</div>
+<div class="chip" onclick="this.classList.toggle('active')">Takeaway</div>
+<div class="chip" onclick="this.classList.toggle('active')">Home Service</div>
+<div class="chip" onclick="this.classList.toggle('active')">On-site Service</div>
+<div class="chip" onclick="this.classList.toggle('active')">24/7 Service</div>
+<div class="chip" onclick="this.classList.toggle('active')">Emergency Service</div>
+<div class="chip" onclick="this.classList.toggle('active')">Same Day Service</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Online Booking</div>
+<div class="chip" onclick="this.classList.toggle('active')">Appointments</div>
+<div class="chip" onclick="this.classList.toggle('active')">Walk-in</div>
+<div class="chip" onclick="this.classList.toggle('active')">Consultation</div>
+<div class="chip" onclick="this.classList.toggle('active')">Free Consultation</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Customer Support</div>
+<div class="chip" onclick="this.classList.toggle('active')">Live Chat</div>
+<div class="chip" onclick="this.classList.toggle('active')">After Sales</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Custom Orders</div>
+<div class="chip" onclick="this.classList.toggle('active')">Bulk Orders</div>
+<div class="chip" onclick="this.classList.toggle('active')">Subscriptions</div>
+<div class="chip" onclick="this.classList.toggle('active')">Pre Orders</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Online Payment</div>
+<div class="chip" onclick="this.classList.toggle('active')">Cash on Delivery</div>
+<div class="chip" onclick="this.classList.toggle('active')">UPI Payment</div>
+<div class="chip" onclick="this.classList.toggle('active')">Card Payment</div>
+<div class="chip" onclick="this.classList.toggle('active')">EMI</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Web Development</div>
+<div class="chip" onclick="this.classList.toggle('active')">App Development</div>
+<div class="chip" onclick="this.classList.toggle('active')">SEO</div>
+<div class="chip" onclick="this.classList.toggle('active')">Digital Marketing</div>
+<div class="chip" onclick="this.classList.toggle('active')">UI/UX</div>
+<div class="chip" onclick="this.classList.toggle('active')">Graphic Design</div>
+<div class="chip" onclick="this.classList.toggle('active')">Social Media</div>
+<div class="chip" onclick="this.classList.toggle('active')">Ads Management</div>
+<div class="chip" onclick="this.classList.toggle('active')">Content Creation</div>
+<div class="chip" onclick="this.classList.toggle('active')">Video Editing</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Software Development</div>
+<div class="chip" onclick="this.classList.toggle('active')">Cloud Services</div>
+<div class="chip" onclick="this.classList.toggle('active')">Cyber Security</div>
+<div class="chip" onclick="this.classList.toggle('active')">IT Support</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Installation</div>
+<div class="chip" onclick="this.classList.toggle('active')">Repair</div>
+<div class="chip" onclick="this.classList.toggle('active')">Maintenance</div>
+<div class="chip" onclick="this.classList.toggle('active')">AMC</div>
+<div class="chip" onclick="this.classList.toggle('active')">Upgrade</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Cleaning</div>
+<div class="chip" onclick="this.classList.toggle('active')">Plumbing</div>
+<div class="chip" onclick="this.classList.toggle('active')">Electrician</div>
+<div class="chip" onclick="this.classList.toggle('active')">Carpentry</div>
+<div class="chip" onclick="this.classList.toggle('active')">Painting</div>
+<div class="chip" onclick="this.classList.toggle('active')">Interior Design</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Tour Packages</div>
+<div class="chip" onclick="this.classList.toggle('active')">Hotel Booking</div>
+<div class="chip" onclick="this.classList.toggle('active')">Car Rental</div>
+<div class="chip" onclick="this.classList.toggle('active')">Guide Service</div>
+<div class="chip" onclick="this.classList.toggle('active')">Ticket Booking</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Event Services</div>
+<div class="chip" onclick="this.classList.toggle('active')">Wedding Planning</div>
+<div class="chip" onclick="this.classList.toggle('active')">Catering</div>
+<div class="chip" onclick="this.classList.toggle('active')">Decoration</div>
+<div class="chip" onclick="this.classList.toggle('active')">Photography</div>
+<div class="chip" onclick="this.classList.toggle('active')">Videography</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Doctor Consultation</div>
+<div class="chip" onclick="this.classList.toggle('active')">Lab Testing</div>
+<div class="chip" onclick="this.classList.toggle('active')">Home Nursing</div>
+<div class="chip" onclick="this.classList.toggle('active')">Pharmacy Delivery</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Coaching</div>
+<div class="chip" onclick="this.classList.toggle('active')">Online Classes</div>
+<div class="chip" onclick="this.classList.toggle('active')">Workshops</div>
+<div class="chip" onclick="this.classList.toggle('active')">Training</div>
+<div class="chip" onclick="this.classList.toggle('active')">Certification</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Consulting</div>
+<div class="chip" onclick="this.classList.toggle('active')">Accounting</div>
+<div class="chip" onclick="this.classList.toggle('active')">Legal Services</div>
+<div class="chip" onclick="this.classList.toggle('active')">HR Services</div>
+<div class="chip" onclick="this.classList.toggle('active')">Recruitment</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Car Wash</div>
+<div class="chip" onclick="this.classList.toggle('active')">Auto Repair</div>
+<div class="chip" onclick="this.classList.toggle('active')">Bike Repair</div>
+<div class="chip" onclick="this.classList.toggle('active')">Tyre Service</div>
+
+<div class="chip" onclick="this.classList.toggle('active')">Wholesale</div>
+<div class="chip" onclick="this.classList.toggle('active')">Retail</div>
+<div class="chip" onclick="this.classList.toggle('active')">Import</div>
+<div class="chip" onclick="this.classList.toggle('active')">Export</div>
+  </div>
+</div>
     <button class="btn btn-primary" id="edit-save-btn" onclick="saveEditBusiness()">Save Changes</button>
     <button class="btn btn-red" style="margin-top:8px" onclick="deleteMyBusiness()">🗑 Delete This Business</button>
     <button class="btn btn-ghost" style="margin-top:8px" onclick="closeModal('edit-biz-modal')">Cancel</button>
