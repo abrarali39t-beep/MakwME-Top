@@ -2081,19 +2081,20 @@ function injectBizSchema(b) {
   // ── Dynamic meta description ──
   let metaDesc = document.querySelector('meta[name="description"]');
   if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name='description'; document.head.appendChild(metaDesc); }
-  metaDesc.content = `${b.name} MBP – ${b.type||'Business'} in Srinagar, J&K. ${b.description ? b.description.slice(0,100)+'...' : 'View address, phone, reviews & contact.'} MBP on MakeMeTop – J&K's #1 business directory.`;
+  metaDesc.content = `${b.name} MBP – ${b.type||'Business'} in Srinagar, J&K. ${b.description ? b.description.slice(0,100)+'...' : 'View address, phone, reviews & contact.'} Listed on MakeMeTop – J&K's #1 business directory.`;
 
-  // ── Canonical URL per profile ──
+  // ── Canonical → biz.html (Google-indexable static URL) ──
+  const bizPageUrl = `https://makemetop.in/biz.html?id=${b.id}`;
   let canonical = document.querySelector('link[rel="canonical"]');
   if (!canonical) { canonical = document.createElement('link'); canonical.rel='canonical'; document.head.appendChild(canonical); }
-  canonical.href = `https://makemetop.in/?biz=${b.id}`;
+  canonical.href = bizPageUrl;
 
   // ── Open Graph per profile ──
   const ogMap = {
     'og:title': `${b.name} – MBP | ${b.type||'Business'} in Srinagar | MakeMeTop`,
     'og:description': metaDesc.content,
     'og:image': b.cover_url || b.logo_url || 'https://makemetop.in/icon-512.png',
-    'og:url': `https://makemetop.in/?biz=${b.id}`
+    'og:url': bizPageUrl
   };
   Object.entries(ogMap).forEach(([prop, content]) => {
     let tag = document.querySelector(`meta[property="${prop}"]`);
@@ -2436,7 +2437,15 @@ async function adminResolveClaim(claimId, action, bizId, newOwnerUid, newOwnerEm
 }
 function callBusiness() { if (!currentBizData?.phone) return; window.location.href='tel:'+currentBizData.phone.replace(/\s/g,''); }
 function whatsappBusiness() { const num=(currentBizData?.whatsapp||currentBizData?.phone||'').replace(/\D/g,''); if(!num){showToast('⚠️ WhatsApp not available');return;} window.open('https://wa.me/'+(num.startsWith('91')?num:'91'+num),'_blank'); }
-function shareBusiness() { const url='https://makemetop.in/?biz='+currentBizData?.id; if(navigator.share){navigator.share({title:currentBizData?.name,text:'Check out '+currentBizData?.name+' on MakeMeTop!',url});}else{navigator.clipboard.writeText(url).then(()=>showToast('🔗 Link copied!'));} }
+function shareBusiness() {
+  if (!currentBizData) return;
+  const url = `https://makemetop.in/biz.html?id=${currentBizData.id}`;
+  if (navigator.share) {
+    navigator.share({ title: currentBizData.name + ' – MBP', text: 'Check out ' + currentBizData.name + ' on MBP – MakeMeTop Business Profile, Srinagar J&K!', url });
+  } else {
+    navigator.clipboard.writeText(url).then(() => showToast('🔗 Profile link copied!'));
+  }
+}
 
 // ══════════════════════════════════════
 //  DASHBOARD
